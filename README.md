@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/jerehuy/COMP.SE.200-2020-assignment.svg?token=eutjzgVkrv8oA8N4nyb7&branch=master)](https://travis-ci.com/jerehuy/COMP.SE.200-2020-assignment)
+[![Coverage Status](https://coveralls.io/repos/github/jerehuy/COMP.SE.200-2020-assignment/badge.svg?branch=master)](https://coveralls.io/github/jerehuy/COMP.SE.200-2020-assignment?branch=master)
+
 # Student template
 
 ## Purpose of this repository
