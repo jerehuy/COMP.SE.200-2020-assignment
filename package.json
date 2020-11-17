@@ -5,12 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "coveralls": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage && coveralls < coverage/lcov.info"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "jest": "^26.6.3"
   }
 }
