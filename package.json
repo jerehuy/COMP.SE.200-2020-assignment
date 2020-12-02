@@ -14,5 +14,9 @@
   "devDependencies": {
     "coveralls": "^3.1.0",
     "jest": "^26.6.3"
+  },
+  "jest": {
+    "verbose": true,
+    "testFailureExitCode": 0
   }
 }
