@@ -19,17 +19,17 @@ test('divide into 4 arrays within an array', () => {
 
 
 describe('Sometimes this function adds undefined values to the to the arrays, these tests should reveal those defects', () => {
-            const a = ['a', 'b', 'c', 'd']
-            const cases = [ [a, 1], [a, 2], [a, 3], [a, 4] ];
+    const a = ['a', 'b', 'c', 'd']
+    const cases = [ [a, 1], [a, 2], [a, 3], [a, 4] ];
 
-            test.each(cases)(
-              "%p, %p",
-              (firstArg, secondArg) => {
-                const result = chunk(firstArg, secondArg);
-                expect(result).not.toContain(undefined)
-              }
-            )
-        })
+    test.each(cases)(
+      "%p, %p",
+      (firstArg, secondArg) => {
+        const result = chunk(firstArg, secondArg);
+        expect(result).not.toContain(undefined)
+      }
+    )
+})
 
 
 
@@ -40,4 +40,8 @@ test('empty array test with arg 1', () => {
 
 test('empty array test with arg 2', () => {
   expect( chunk([])).toMatchObject([])
+})
+
+test('null as array', () => {
+  expect (chunk (null, 1)).toMatchObject([])
 })
