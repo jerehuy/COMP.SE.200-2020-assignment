@@ -3,14 +3,22 @@ import chunk from '../src/chunk'
 const a = ['a', 'b', 'c', 'd']
 
 
-test('Chunk documentation example 1', () => {
-  expect( chunk(a, 2)).toBe([ ['a', 'b'], ['c', 'd'] ])
-})
+describe('Documentation examples', () => {
+  test('example 1', () => {
+    expect( chunk(a, 2)).toMatchObject([ ['a', 'b'], ['c', 'd'] ])
+  })
 
 
-test('Chunk documentation example 2', () => {
+  test('example 2', () => {
   expect( chunk(a, 3)).toMatchObject([ ['a', 'b', 'c'], ['d'] ])
 })
+
+})
+
+
+
+
+
 
 
 test('divide into 4 arrays within an array', () => {
@@ -18,7 +26,7 @@ test('divide into 4 arrays within an array', () => {
 })
 
 
-describe('Sometimes this function adds undefined values to the to the arrays, these tests should reveal those defects', () => {
+describe('Testing the function does not leave undefined values in the arrays', () => {
     const a = ['a', 'b', 'c', 'd']
     const cases = [ [a, 1], [a, 2], [a, 3], [a, 4] ];
 
@@ -32,16 +40,33 @@ describe('Sometimes this function adds undefined values to the to the arrays, th
 })
 
 
+describe('corner cases: empty & null arrays', () => {
 
+  test('empty array test with arg 1', () => {
+    expect( chunk([], 1)).toMatchObject([])
+  })
 
-test('empty array test with arg 1', () => {
-  expect( chunk([], 1)).toMatchObject([])
+  test('empty array test with arg 2', () => {
+    expect( chunk([])).toMatchObject([])
+  })
+
+  test('null as array', () => {
+    expect (chunk ([null], 1)).toMatchObject([null])
+  })
+
 })
 
-test('empty array test with arg 2', () => {
-  expect( chunk([])).toMatchObject([])
-})
+describe('Few expected use cases', () => {
+  const arr = [100, 200, 300, 400, 500, 600, 700];
+  test('large array into array of single arrays', () => {
+    expect (chunk(arr, 1)).toBe([ [100], [200], [300], [400], [500], [600], [700]]);
+  })
 
-test('null as array', () => {
-  expect (chunk (null, 1)).toMatchObject([])
+  test('large array into array of two and one array at the end', () => {
+    expect(chunk(arr, 2)).toBe( [ [100, 200], [300, 400], [500, 600], [700]]);
+  })
+
+  test('large array into array of three', () => {
+    expect(chunk( arr, 3)).toBe( [ [100, 200, 300], [400, 500, 600], [700] ]);
+  })
 })
