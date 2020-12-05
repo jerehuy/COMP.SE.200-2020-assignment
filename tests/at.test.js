@@ -7,3 +7,16 @@ describe("documentation examples,", () => {
         expect(at(object, ['a[0].b.c', 'a[1]'])).toMatchObject([3,4])
     })
 })
+
+
+describe("simple object testing", () => {
+    const obj1 = { 'a': [1, 2, 3]}
+    
+    test("a[0] => 1", () => {
+        expect(at(obj1, ['a[0]'])).toMatchObject([1])
+    })
+
+    test("a[2] => 3", () => {
+        expect(at(obj1, ['a[2]'])).toMatchObject([3])
+    })
+})
