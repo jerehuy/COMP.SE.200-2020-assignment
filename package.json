@@ -18,6 +18,14 @@
     "jest": "^26.6.3"
   },
   "jest": {
-    "setupFilesAfterEnv": ["jest-extended"]
+    "verbose": true,
+    "testFailureExitCode": 0,
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ],
+    "collectCoverageFrom": [
+      "src/*.js",
+      "!src/.internal/.*js"
+    ]
   }
 }
