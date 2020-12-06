@@ -20,6 +20,12 @@
   "jest": {
     "verbose": true,
     "testFailureExitCode": 0,
-    "setupFilesAfterEnv": ["jest-extended"]
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ],
+    "collectCoverageFrom": [
+      "src/*.js",
+      "!src/.internal/.*js"
+    ]
   }
 }
