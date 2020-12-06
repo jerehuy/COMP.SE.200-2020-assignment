@@ -19,7 +19,7 @@
   },
   "jest": {
     "verbose": true,
-    "testFailureExitCode": 0
+    "testFailureExitCode": 0,
     "setupFilesAfterEnv": ["jest-extended"]
   }
 }
