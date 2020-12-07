@@ -47,3 +47,17 @@ describe("more complex data", () => {
         expect( filter(data, ({value}) => 2)).toMatchObject([ {'color': 'red', 'status': true, 'value': 2}])
     })
 })
+
+
+describe("even more complex data", () => {
+    const data = [
+        {'name': 'john', 'role': 'employee', 'salary': 5000},
+        {'name': 'adam', 'role': 'manager', 'salary': 6000}
+    ]
+
+    test("look for adam", () => {
+        expect(
+            filter(data, ({name}) => 'adam')).toMatchObject([ {'name': 'adam', 'role': 'manager', 'salary': 6000}])
+        
+    })
+})
