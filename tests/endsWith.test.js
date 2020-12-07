@@ -20,6 +20,12 @@ test('Position parameter higher than length', () => {
 test('Position parameter negative', () => {
   expect(endsWith("Word", "w", -100)).toBe(false)
 })
+test('Target parameter contains multiple characters', () => {
+  expect(endsWith("Word test", "test")).toBe(true)
+})
+test('Target parameter equals the whole string', () => {
+  expect(endsWith("Word test", "Word test")).toBe(true)
+})
 test('Target values is blank space', () => {
   expect(endsWith("Word test", " ", 5)).toBe(true)
 })
@@ -29,8 +35,8 @@ test('Target value upper case, actual character is lower case', () => {
 test('Target value lower case, actual character is upper case', () => {
   expect(endsWith("test woRd", "r", 8)).toBe(false)
 })
-test('Non-alphanumeric values', () => {
-  expect(endsWith("!\"#¤%&/()=?^*_:;><,.-'¨´+@£$€{[]}€", "&", 6)).toBe(true)
+test('Non-alphanumeric characters', () => {
+  expect(endsWith("!\"#¤%&/()=?^*_:;><,.-'¨´+@£$€{[]}€", "!\"#¤%&/()=?^*_:;><,.-'¨´+@£$€{[]}€")).toBe(true)
 })
 test('Numeric values', () => {
   expect(endsWith("123456789", "9")).toBe(true)
