@@ -22,6 +22,20 @@ describe("random arrays", () => {
     const arr = [0,1,2,3,4,5]
 
     test("random array test", () => {
-    expect(keys(arr)).toMatchObject(['0', '1', '2', '3', '4', '5']);
+    expect(keys(arr)).toMatchObject(['0', '1', '2', '3', '4', '5'])
+    })
+})
+
+
+
+describe("large object property names", () => {
+    const largeObject = {
+        FirstElement: 1,
+        SecondElement: 2,
+        ThirdElement: 3
+    }
+
+    test("large object", () => {
+    expect(keys(largeObject)).toMatchObject(['FirstElement', 'SecondElement', 'ThirdElement'])
     })
 })
