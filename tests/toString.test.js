@@ -21,6 +21,10 @@ test('Objects to string', () => {
   var a = {id: 1, name: "John Doe"};
   expect(toStr(a)).toBe("[object Object]")
 })
+test('Object values to string', () => {
+  var a = {id: 1, name: "John Doe"};
+  expect(toStr(a.id)).toBe("1")
+})
 test('Undefined to string', () => {
   var a = undefined;
   expect(toStr(a)).toBe("undefined")
@@ -32,4 +36,8 @@ test('Null to string', () => {
 test('NaN to string', () => {
   var a = NaN;
   expect(toStr(a)).toBe("NaN")
+})
+test('Symbol to string', () => {
+  var a = Symbol("Symbol");
+  expect(toStr(a)).toBe("Symbol(Symbol)")
 })

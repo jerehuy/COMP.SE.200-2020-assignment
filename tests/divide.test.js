@@ -62,6 +62,6 @@ test('MAX / MIN', () => {
 })
 test('NaN', () => {
   var a = Number.NaN;
-  var b = 1;
+  var b = Number.NaN;
   expect(divide(a, b)).toBe(a / b);
 })

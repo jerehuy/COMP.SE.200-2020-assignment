@@ -33,7 +33,7 @@ test('Null', () => {
   var a = null;
   expect(castArray(a)).toStrictEqual([null])
 })
-test('NaN to int', () => {
+test('NaN', () => {
   var a = NaN;
   expect(castArray(a)).toStrictEqual([NaN])
 })

@@ -6,7 +6,7 @@ test('Int to Finite', () => {
 })
 test('Float to Finite', () => {
   var a = 12.5;
-  expect(toFinite(a)).toBeOneOf([12, 13])
+  expect(toFinite(a)).toBe(12.5)
 })
 test('Valid string to Finite', () => {
   var a = "16";
@@ -47,4 +47,12 @@ test('Null to Finite', () => {
 test('NaN to Finite', () => {
   var a = NaN;
   expect(toFinite(a)).toBe(0)
+})
+test('Infinity to Finite', () => {
+  var a = Infinity;
+  expect(toFinite(a)).toBe(1.7976931348623157e+308)
+})
+test('-Infinity to Finite', () => {
+  var a = -Infinity;
+  expect(toFinite(a)).toBe(-1.7976931348623157e+308)
 })

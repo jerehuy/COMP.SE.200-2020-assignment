@@ -6,7 +6,7 @@ test('Int to int', () => {
 })
 test('Float to int', () => {
   var a = 12.5;
-  expect(toInteger(a)).toBeOneOf([12, 13])
+  expect(toInteger(a)).toBe(Math.floor(Math.abs(a)))
 })
 test('Valid string to int', () => {
   var a = "16";
@@ -47,4 +47,16 @@ test('Null to int', () => {
 test('NaN to int', () => {
   var a = NaN;
   expect(toInteger(a)).toBe(0)
+})
+test('Infinity to int', () => {
+  var a = Infinity;
+  expect(toInteger(a)).toBe(1.7976931348623157e+308)
+})
+test('Number.MAX_VALUE to int', () => {
+  var a = Number.MAX_VALUE;
+  expect(toInteger(a)).toBe(Math.floor(Math.abs(a)))
+})
+test('Number.MIN_VALUE to int', () => {
+  var a = Number.MIN_VALUE;
+  expect(toInteger(a)).toBe(Math.floor(Math.abs(a)))
 })

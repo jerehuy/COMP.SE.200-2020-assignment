@@ -51,6 +51,9 @@ test('Int8Array is TypedArray', () => {
 test('Uint8Array is TypedArray', () => {
   expect(isTypedArray(new Uint8Array())).toBe(true)
 })
+test('Uint8ClampedArray is TypedArray', () => {
+  expect(isTypedArray(new Uint8ClampedArray())).toBe(true)
+})
 test('Int16Array is TypedArray', () => {
   expect(isTypedArray(new Int16Array())).toBe(true)
 })

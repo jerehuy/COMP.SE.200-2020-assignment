@@ -36,7 +36,7 @@ test('Array is not Buffer', () => {
 test('Object is not Buffer', () => {
   expect(isBuffer({id: 7, name: "John Doe"})).toBe(false)
 })
-test('Buffer is Buffer', () => {
+test('Buffer containing string is Buffer', () => {
   expect(isBuffer(Buffer.from("Buffer"))).toBe(true)
 })
 test('Empty Buffer is Buffer', () => {

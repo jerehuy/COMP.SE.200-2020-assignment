@@ -34,7 +34,7 @@ test('Upper boundary lower than lower boundary', () => {
   var a = 50;
   var b = 200
   var c = 100;
-  expect(clamp(a, b, c)).toThrow();
+  expect(clamp(a, b, c)).toBe(c);
 })
 test('Floats', () => {
   var a = 222.211;

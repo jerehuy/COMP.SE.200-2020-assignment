@@ -48,3 +48,19 @@ test('NaN', () => {
   var a = NaN;
   expect(toNumber(a)).toBe(NaN)
 })
+test('Infinity to Number', () => {
+  var a = Infinity;
+  expect(toNumber(a)).toBe(Infinity)
+})
+test('-Infinity to Finite', () => {
+  var a = -Infinity;
+  expect(toNumber(a)).toBe(-Infinity)
+})
+test('Number.MAX_VALUE to Number', () => {
+  var a = Number.MAX_VALUE;
+  expect(toNumber(a)).toBe(a)
+})
+test('Number.MIN_VALUE to Number', () => {
+  var a = Number.MIN_VALUE;
+  expect(toNumber(a)).toBe(a)
+})
